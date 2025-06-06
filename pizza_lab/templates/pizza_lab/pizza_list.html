@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block page_title %} Menu de Pizzas {% endblock %}
+{% block content %}
+<a href="{% url 'home' %}" class="btn btn-light mb-3">
+  <i class="bi bi-house"></i> Voltar para Início
+</a>
+<h1>Gestão do Cardápio de Pizzas</h1>
+<a href="{% url "menu_create" %}" class="btn btn-outline-success btn-sm">Adicionar nova Pizza</a>
+{% if menu %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome da Pizza</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Tamanho</th>
+      <th scope="col">Preco</th>
+      <th scope="col">Tipo</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for pizza in menu %}
+    <tr>
+      <th scope="row">{{ pizza.pk }}</th>
+      <td>{{ pizza.nome }}</td>
+      <td>{{ pizza.descricao }}</td>
+      <td>{{ pizza.tamanho }}</td>
+      <td>{{ pizza.preco}}</td>
+      <td>{{ pizza.tipo}}</td>
+      <td>
+        <a href="{% url "menu_update" pk=pizza.pk %}" class="btn btn-outline-primary btn-sm">Editar</a>
+        <a href="{% url "menu_delete" pk=pizza.pk %}" class="btn btn-outline-danger btn-sm">Excluir</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>Nao ha Pizzas Cadastradas</p>
+{% endif %} {% endblock content %}

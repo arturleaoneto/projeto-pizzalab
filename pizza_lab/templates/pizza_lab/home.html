@@ -1,0 +1,19 @@
+<!-- prettier-ignore -->
+{% extends "base.html" %}
+{% block page_title %} 
+  Gestão PizzaLab
+{% endblock %}
+
+{% block content %}
+<h1>
+  <a href="{% url "menu" %}" class="btn btn-secondary btn-lg">Gestão do Cardápio
+  de Pizzas</a>
+</h1>
+<h1>
+  <a href="#" class="btn btn-secondary btn-lg">Gestão de Pedidos</a>
+</h1>
+<h1>
+  <a href="#" class="btn btn-secondary btn-lg">Gestão de Estoque</a>
+</h1>
+<h1><a href="#" class="btn btn-secondary btn-lg">Relatórios</a></h1>
+{% endblock content %}
