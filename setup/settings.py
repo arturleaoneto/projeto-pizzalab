@@ -4,9 +4,14 @@ from dotenv import load_dotenv
 import dj_database_url
 
 # Carregar variáveis de ambiente do arquivo .env
-load_dotenv()
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# load_dotenv()
+
+load_dotenv(dotenv_path=BASE_DIR / ".env")
+
 
 # Segurança
 SECRET_KEY = os.environ.get("SECRET_KEY")
