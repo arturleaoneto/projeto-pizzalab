@@ -28,7 +28,7 @@ class MenuListView(ListView):
 # View para atualizar pizza
 class MenuUpdateView(UpdateView):
     model = Pizza
-    fields = ["nome", "descricao", "tamanho", "preco"]
+    fields = ["nome", "descricao"]
     success_url = reverse_lazy("menu")
 
 

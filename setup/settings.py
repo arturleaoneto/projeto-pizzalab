@@ -78,7 +78,7 @@ WSGI_APPLICATION = "setup.wsgi.application"
 DATABASES = {
     "default": dj_database_url.config(
         default=os.environ.get(
-            "DATABASE_URL", "mysql://root:Amora@2025@localhost:3306/pizza_lab"
+            "DATABASE_URL", "mysql://root:Amora%402025@localhost:3306/pizza_lab"
         )
     )
 }
